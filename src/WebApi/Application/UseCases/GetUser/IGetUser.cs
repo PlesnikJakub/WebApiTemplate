@@ -5,7 +5,7 @@ namespace Application.UseCases.GetUser
 {
     public interface IGetUser
     {
-        Task Execute(Guid accountId);
+        Task Execute(GetUserInput input);
 
         void SetOutputPort(IOutputPort outputPort);
     }
