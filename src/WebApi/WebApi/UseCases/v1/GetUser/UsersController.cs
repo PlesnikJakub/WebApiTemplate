@@ -8,8 +8,8 @@ namespace WebApi.UseCases.v1.GetUser
     [ApiController]
     public class UsersController : ControllerBase
     {
-        [HttpGet("{test}")]
-        public async Task<IActionResult> Get(string base64Payload = null)
+        [HttpGet]
+        public async Task<IActionResult> Get()
         {
             return Ok();
         }
