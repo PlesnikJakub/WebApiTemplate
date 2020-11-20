@@ -1,19 +1,19 @@
-﻿using Application;
-using Infrastructure.Entities;
+﻿using Infrastructure.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure
 {
     public class MyDbContext : DbContext
     {
-        public MyDbContext(IConfigurationProvider configurationProvider)
+        public MyDbContext(DbContextOptions options) : base(options)
         {
-
         }
 
         public DbSet<User> Blogs { get; set; }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder options)
-            => options.UseSqlServer("Data Source=blogging.db");
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            // TODO
+        }
     }
 }
