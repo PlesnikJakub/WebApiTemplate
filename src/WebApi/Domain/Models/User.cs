@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Domain.Models
+﻿namespace Domain.Models
 {
-    class User
+    public class User
     {
+        public string Name { get; set; }
+
+        public string Email { get; set; }
     }
 }
