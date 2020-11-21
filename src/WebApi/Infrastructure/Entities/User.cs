@@ -1,6 +1,8 @@
-﻿namespace Infrastructure.Entities
+﻿using Domain.Entities;
+
+namespace Infrastructure.Entities
 {
-    public class User
+    public class User : IEntity
     {
         public int Id { get; set; }
 
