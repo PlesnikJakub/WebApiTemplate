@@ -1,4 +1,6 @@
-﻿namespace Application.UseCases.GetUser
+﻿using Domain.Models;
+
+namespace Application.UseCases.GetUser
 {
     /// <summary>
     ///     Output Port.

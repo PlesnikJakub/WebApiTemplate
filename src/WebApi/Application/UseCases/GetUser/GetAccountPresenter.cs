@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Application.UseCases.GetUser
+﻿namespace Application.UseCases.GetUser
 {
-    public class GetAccountPresenter
+    public class GetAccountPresenter : IOutputPort
     {
     }
 }
