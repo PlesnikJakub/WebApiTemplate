@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Application.UseCases.GetUser
 {
-    public class GetUser : IGetUser
+    public class GetUserUseCase : IGetUser
     {
         private IOutputPort _outputPort;
 
-        public GetUser()
+        public GetUserUseCase()
         {
             this._outputPort = new GetAccountPresenter();
         }
