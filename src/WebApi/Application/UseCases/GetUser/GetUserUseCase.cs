@@ -24,7 +24,7 @@ namespace Application.UseCases.GetUser
             throw new NotImplementedException();
         }
 
-        private async Task GetUserInternal(AccountId accountId)
+        private async Task GetUserInternal(Guid accountId)
         {
 
             this._outputPort.NotFound();
