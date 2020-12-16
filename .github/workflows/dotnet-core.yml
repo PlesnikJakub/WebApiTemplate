@@ -21,3 +21,6 @@ jobs:
     - name: Build
       working-directory: ./src/WebApi
       run: dotnet build --configuration Release --no-restore
+    - name: Test
+      working-directory: ../src/WebApi
+      run: dotnet test
