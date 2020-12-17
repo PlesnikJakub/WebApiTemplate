@@ -22,7 +22,7 @@ jobs:
           dotnet publish -c Release -o dotnetcorewebapp
       - name: Create archive
         run: |
-          zip --junk-paths my-artifact dotnetcorewebapp
+          zip --junk-paths my-artifact ./src/WebApi/dotnetcorewebapp
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
