@@ -13,9 +13,12 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-      - name: Build project # This would actually build your project, using zip for an example artifact
+      - name: Publist project
         run: |
-          zip --junk-paths my-artifact README.md
+          dotnet publish -c Release -o dotnetcorewebapp
+      - name: Create archive
+        run: |
+          zip --junk-paths my-artifact dotnetcorewebapp
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
