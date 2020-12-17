@@ -26,6 +26,8 @@ namespace WebApi
 
             services.AddSwaggerGen();
 
+            services.AddUseCases();
+
             services.AddPersistence(Configuration);
         }
 
