@@ -2,5 +2,9 @@
 {
     public class ApplicationFixture
     {
+        public ApplicationFixture()
+        {
+
+        }
     }
 }
