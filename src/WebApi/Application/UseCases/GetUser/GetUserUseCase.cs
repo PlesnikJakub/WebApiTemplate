@@ -13,7 +13,8 @@ namespace Application.UseCases.GetUser
         }
         public Task Execute(GetUserInput input)
         {
-            throw new NotImplementedException();
+            // TODO
+            return Task.FromResult(0);
         }
 
         public void SetOutputPort(IOutputPort outputPort)
@@ -23,7 +24,6 @@ namespace Application.UseCases.GetUser
 
         private async Task GetUserInternal(Guid accountId)
         {
-
             this._outputPort.NotFound();
         }
     }
