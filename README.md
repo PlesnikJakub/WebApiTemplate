@@ -4,7 +4,17 @@
 
 ## Overview
 
-Setup of a project with proper architecture, guidelines, rules and CI/CD may take a lot of time, days, sometimes even weeks. This repository was created to make that setup easier and faster. 
+Setup of a project with propper architecture, guidelines, rules and CI/CD may take a lot of time, days, sometimes even weeks. This repository was created to make that setup easier and faster. 
+
+## Content
+* Projects for WebApi, Application, Domain, Infrastructure, Unit and Integration Tests
+* Application layer wihh small number of usecases with example of usage from web api layer
+* Infrastructure layer with EF Core, examples of migration and entity class
+* Use case controllers on web api layer
+* Swagger documentation for versioned api
+* Testing, both Unit and Integration, with Xunit and example of test cases
+* CI/CD for running test 
+* CI/CD for automatic release on tag
 
 ## Architecture
 
