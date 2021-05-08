@@ -22,6 +22,8 @@ namespace WebApi
         {
             services.AddControllers();
 
+            services.AddHealthChecks();
+
             services.AddVersioning();
 
             services.AddSwaggerGen();
@@ -50,6 +52,8 @@ namespace WebApi
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+
+                endpoints.MapHealthChecks("/health");
             });
         }
     }
