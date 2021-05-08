@@ -10,8 +10,8 @@ namespace WebApi.UseCases.v1.GetUser
     [ApiController]
     public class UsersController : ControllerBase
     {
-        private IGetUser useCase;
-        public UsersController(IGetUser getUser)
+        private IGetUserUseCase useCase;
+        public UsersController(IGetUserUseCase getUser)
         {
             useCase = getUser;
         }

@@ -7,7 +7,7 @@ namespace WebApi.Modules
     {
         public static IServiceCollection AddUseCases(this IServiceCollection services)
         {
-            _ = services.AddTransient<IGetUser, GetUserUseCase>();
+            _ = services.AddTransient<IGetUserUseCase, GetUserUseCase>();
             return services;
         }
     }

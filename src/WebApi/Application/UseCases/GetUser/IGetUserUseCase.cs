@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 
 namespace Application.UseCases.GetUser
 {
-    public interface IGetUser
+    public interface IGetUserUseCase
     {
         Task Execute(GetUserInput input);
 

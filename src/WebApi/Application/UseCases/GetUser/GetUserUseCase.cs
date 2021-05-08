@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 
 namespace Application.UseCases.GetUser
 {
-    public class GetUserUseCase : IGetUser
+    public class GetUserUseCase : IGetUserUseCase
     {
         private IOutputPort _outputPort;
 
