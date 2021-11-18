@@ -1,7 +1,6 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 
-namespace Application.UseCases.GetUser
+namespace Application.UseCases.User.GetUser
 {
     public interface IGetUserUseCase
     {

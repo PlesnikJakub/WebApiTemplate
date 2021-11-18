@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 
-namespace Application.UseCases.GetUser
+namespace Application.UseCases.User.GetUser
 {
     public class GetUserUseCase : IGetUserUseCase
     {
@@ -9,7 +9,7 @@ namespace Application.UseCases.GetUser
 
         public GetUserUseCase()
         {
-            this._outputPort = new GetAccountPresenter();
+            _outputPort = new GetUserPresenter();
         }
         public Task Execute(GetUserInput input)
         {
@@ -24,7 +24,7 @@ namespace Application.UseCases.GetUser
 
         private async Task GetUserInternal(Guid accountId)
         {
-            this._outputPort.NotFound();
+            _outputPort.NotFound();
         }
     }
 }
