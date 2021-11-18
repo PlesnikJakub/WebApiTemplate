@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using Application.UseCases.GetUser;
 using System;
+using Application.UseCases.User.GetUser;
 
 namespace WebApi.UseCases.v1.GetUser
 {

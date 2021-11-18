@@ -1,4 +1,4 @@
-﻿using Application.UseCases.GetUser;
+﻿using Application.UseCases.User.GetUser;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace WebApi.Modules

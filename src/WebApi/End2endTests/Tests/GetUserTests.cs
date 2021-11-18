@@ -3,7 +3,7 @@ using System;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace IntegrationTests.Tests
+namespace End2EndTests.Tests
 {
     public class GetUserTests : IClassFixture<WebApplicationFactory<WebApi.Startup>>
     {
