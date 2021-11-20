@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
-using Application.UseCases.GetUser;
 using System;
 using Application.UseCases.User.GetUser;
 
