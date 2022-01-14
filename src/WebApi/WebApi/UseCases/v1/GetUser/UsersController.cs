@@ -15,18 +15,5 @@ namespace WebApi.UseCases.v1.GetUser
         {
             useCase = getUser;
         }
-
-        [HttpGet]
-        [Route("{userId:guid}")]
-        public async Task<IActionResult> Get(Guid userId)
-        {
-            var input = new GetUserInput
-            {
-                UserId = userId
-            };
-
-            await useCase.Execute(input);
-            return Ok();
-        }
     }
 }
