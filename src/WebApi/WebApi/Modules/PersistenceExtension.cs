@@ -1,4 +1,6 @@
-﻿using Infrastructure;
+﻿using Application.Repositories;
+using Infrastructure;
+using Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -9,7 +11,12 @@ namespace WebApi.Modules
     {
         public static void AddPersistence(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddDbContext<MyDbContext>(options => options.UseSqlServer(configuration.GetConnectionString("ContentApiContext"), b => b.MigrationsAssembly("Infrastructure")));
+            services.AddDbContext<MyDbContext>((provider, builder) =>
+            {
+                builder.UseSqlServer(configuration.GetConnectionString("MainDb"));
+            }, ServiceLifetime.Transient, ServiceLifetime.Transient);
+
+            services.AddScoped<IUserRepository, UserRepository>();
         }
     }
 }
