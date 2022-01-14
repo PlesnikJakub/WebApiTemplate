@@ -5,15 +5,16 @@ namespace Infrastructure
 {
     public class MyDbContext : DbContext
     {
-        public MyDbContext(DbContextOptions options) : base(options)
+        public DbSet<User> Users { get; set; }
+
+        public MyDbContext(DbContextOptions<MyDbContext> options) : base(options)
         {
         }
 
-        public DbSet<User> Blogs { get; set; }
-
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            // TODO
+            modelBuilder.Entity<User>()
+                .HasKey(user => user.Id);
         }
     }
 }
