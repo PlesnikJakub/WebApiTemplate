@@ -1,11 +1,10 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace WebApi.UseCases.v1.GetUser
+namespace WebApi.UseCases.v1.GetUser;
+
+public record GetUserResponse
 {
-    public record GetUserResponse
-    {
-        [Required]
-        public Guid Guid { get; init; }
-    }
+    [Required]
+    public Guid Guid { get; init; }
 }

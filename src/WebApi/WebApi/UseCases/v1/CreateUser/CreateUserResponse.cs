@@ -1,11 +1,10 @@
-﻿namespace WebApi.UseCases.v1.CreateUser
+﻿namespace WebApi.UseCases.v1.CreateUser;
+
+public record CreateUserResponse
 {
-    public record CreateUserResponse
-    {
-        public string Name { get; init; }
+    public string Name { get; init; }
 
-        public string Email { get; init; }
+    public string Email { get; init; }
 
-        public string Age { get; init; }
-    }
+    public string Age { get; init; }
 }

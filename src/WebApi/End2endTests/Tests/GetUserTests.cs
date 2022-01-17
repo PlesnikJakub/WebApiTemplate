@@ -20,7 +20,7 @@ namespace End2EndTests.Tests
         {
             // Arrange
             var userGuid = Guid.Parse("1f26b2d6-42a6-4c58-a23a-3c00dd54f349");
-            var url = _url + userGuid;
+            var url = _url;// + userGuid;
             var client = _factory.CreateClient();
 
             // Act
