@@ -19,15 +19,15 @@ namespace End2EndTests.Tests
         public async Task GetUser_ExistingUser_ShouldReturnUser()
         {
             // Arrange
-            var userGuid = Guid.Parse("1f26b2d6-42a6-4c58-a23a-3c00dd54f349");
-            var url = _url;// + userGuid;
+            var userGuid = 2;
+            var url = _url + userGuid;
             var client = _factory.CreateClient();
 
             // Act
             var response = await client.GetAsync(url);
 
             // Assert
-            response.EnsureSuccessStatusCode();
+            Assert.Equal(System.Net.HttpStatusCode.NotFound, response.StatusCode);
         }
     }
 }

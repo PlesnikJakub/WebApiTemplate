@@ -3,6 +3,8 @@ using System.Threading.Tasks;
 
 namespace WebApi.UseCases.v1.CreateUser;
 
+// PLACEHOLDER
+
 [ApiVersion("1.0")]
 [Route("api/v{version:apiVersion}/[controller]")]
 [ApiController]

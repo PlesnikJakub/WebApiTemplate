@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Application.Repositories;
+using System;
 using System.Threading.Tasks;
 
 namespace Application.UseCases.User.GetUser
@@ -7,24 +8,26 @@ namespace Application.UseCases.User.GetUser
     {
         private IOutputPort _outputPort;
 
-        public GetUserUseCase()
+        private IUserRepository _userRepository;
+
+        public GetUserUseCase(IUserRepository userRepository)
         {
             _outputPort = new GetUserPresenter();
-        }
-        public Task Execute(GetUserInput input)
-        {
-            // TODO
-            return Task.FromResult(0);
+            _userRepository = userRepository;
         }
 
-        public void SetOutputPort(IOutputPort outputPort)
+        public async Task Execute(GetUserInput input)
         {
-            throw new NotImplementedException();
+            await GetUserInternal(input.UserId);
         }
 
-        private async Task GetUserInternal(Guid accountId)
+        public void SetOutputPort(IOutputPort outputPort) => this._outputPort = outputPort;
+
+        private async Task GetUserInternal(int userId)
         {
-            _outputPort.NotFound();
+            var user = await _userRepository.GetById(userId);
+
+            _outputPort.Ok(user);
         }
     }
 }

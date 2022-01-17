@@ -2,26 +2,50 @@
 using System.Threading.Tasks;
 using System;
 using Application.UseCases.User.GetUser;
+using Domain.Models;
 
 namespace WebApi.UseCases.v1.GetUser;
 
 [ApiVersion("1.0")]
 [Route("api/v{version:apiVersion}/[controller]")]
 [ApiController]
-public class UsersController : ControllerBase
+public class UsersController : ControllerBase, IOutputPort
 {
+    private IActionResult? _viewModel;
+
     private IGetUserUseCase useCase;
     public UsersController(IGetUserUseCase getUser)
     {
         useCase = getUser;
     }
 
-    [HttpGet]
-    public async Task<GetUserResponse> Get(Guid userGuid)
+    void IOutputPort.Invalid()
     {
-        return new GetUserResponse
+        _viewModel = this.BadRequest();
+    }
+
+    void IOutputPort.Ok(UserModel user)
+    {
+        _viewModel = this.Ok(new GetUserResponse());
+    }
+
+    void IOutputPort.NotFound()
+    {
+        _viewModel = this.NotFound();
+    }
+
+    [HttpGet]
+    public async Task<IActionResult> Get(int userId)
+    {
+        var input = new GetUserInput
         {
-            Guid = userGuid,
+            UserId = userId
         };
+
+        useCase.SetOutputPort(this);
+
+        await useCase.Execute(input);
+
+        return _viewModel;
     }
 }
